@@ -23,6 +23,9 @@ fi
 
 MYPATH=${PWD}
 
+say "Installing/Compiling SVXLink"
+run "git clone https://github.com/sm0svx/svxlink.git"
+
 cd /tmp
 
 say "Installing svxlink sounds"
@@ -33,3 +36,4 @@ run "rm -fr svxlink-sounds-en_US-heather"
 run "rm -f svxlink-sounds-en_US.tar.bz2"
 
 cd ${MYPATH}
+rm -fr svxlink
