@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo apt -y install wireguard wireguard-tools
+sudo bash -c 'cd /etc/wireguard && umask 077 && wg genkey | tee server.key | wg pubkey > server.pub'
+sudo bash -c 'echo "[Interface]" > /etc/wireguard/wg0.conf && echo "Address =" >> /etc/wireguard/wg0.conf && echo "PrivateKey = $(cat /etc/wireguard/server.key)" >> /etc/wireguard/wg0.conf'
+
+echo
+echo
+echo "When done configuring /etc/wireguard/wg0.conf run these:"
+echo "sudo systemctl enable wg-quick@wg0.service"
+echo "sudo systemctl daemon-reload"
+echo "sudo systemctl start wg-quick@wg0"
+
