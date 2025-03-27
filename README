@@ -1,5 +1,7 @@
 This is the install guide for the RF.Guru SVXLink TRXrptr HAT as a TX only Repeater node
 then apt install git
 and clone this repository
-
-
+sudo ./install-audiochip
+sudo ./install-svxlink-main
+./install-wireguard
+config svxlink and wireguard
